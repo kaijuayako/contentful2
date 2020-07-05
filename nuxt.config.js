@@ -60,7 +60,6 @@ export default {
    */
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
-    '@nuxtjs/vuetify',
     '@nuxtjs/axios',
     '@nuxtjs/eslint-module',
     '@nuxtjs/dotenv'				// 追記
@@ -103,7 +102,7 @@ export default {
    ** See https://nuxtjs.org/api/configuration-build/
    */
   build: {
-    transpile: ['vuetify/lib'],	// 追記
+    transpile: ['vuetify/lib'],	
     extend (config, ctx) {}
   }
 }
