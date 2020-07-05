@@ -68,7 +68,7 @@
 import client from '~/plugins/contentful'
 
 export default {
-  async asyncData({ env }) {
+  async asyncData ({ env }) {
     let posts = []
     await client.getEntries({
       content_type: env.CTF_BLOG_POST_TYPE_ID,
