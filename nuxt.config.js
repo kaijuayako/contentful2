@@ -37,7 +37,9 @@ export default {
    ** Plugins to load before mounting the App
    ** https://nuxtjs.org/guide/plugins
    */
-  plugins: [],
+  plugins: [
+    'plugins/vuetify'
+  ],
   /*
    ** Auto import components
    ** See https://nuxtjs.org/api/configuration-components
@@ -68,18 +70,19 @@ export default {
    ** https://github.com/nuxt-community/vuetify-module
    */
   vuetify: {
-    customVariables: ['~/assets/variables.scss'],
     theme: {
-      dark: true,
       themes: {
-        dark: {
+        light: {
           primary: colors.blue.darken2,
           accent: colors.grey.darken3,
           secondary: colors.amber.darken3,
           info: colors.teal.lighten1,
           warning: colors.amber.base,
           error: colors.deepOrange.accent4,
-          success: colors.green.accent3
+          success: colors.green.accent3,
+          twitter: '#55acee',
+          facebook: '#3b5998',
+          background: colors.grey.lighten5
         }
       }
     }
@@ -88,5 +91,8 @@ export default {
    ** Build configuration
    ** See https://nuxtjs.org/api/configuration-build/
    */
-  build: {}
+  build: {
+    transpile: ['vuetify/lib'],	// 追記
+    extend (config, ctx) {}
+  }
 }
