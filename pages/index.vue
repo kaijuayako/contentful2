@@ -36,6 +36,7 @@
 
               <v-card-text>
                 {{ post.fields.publishDate }}
+                <span :is="draftChip(post)" />
               </v-card-text>
 
               <v-list-item three-line style="min-height: unset;">
@@ -68,9 +69,13 @@
 <script>
 import { mapGetters } from 'vuex'
 import client from '~/plugins/contentful'
+import draftChip from '~/components/posts/draftChip'
 export default {
+  components: {
+    draftChip
+  },
   computed: {
-    ...mapGetters(['setEyeCatch']),
+    ...mapGetters(['setEyeCatch', 'draftChip']),
     linkTo: () => (obj) => {
       return { name: 'posts-slug', params: { slug: obj.fields.slug } }
     }
