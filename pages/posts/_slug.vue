@@ -34,12 +34,12 @@
 </template>
 
 <script>
-import client from '~/plugins/contentful'
 import { mapGetters } from 'vuex'
+import client from '~/plugins/contentful'
 export default {
-    computed: {
+  computed: {
     ...mapGetters(['setEyeCatch'])
-    },
+  },
   async asyncData ({ env, params }) {
     let currentPost = null
     await client.getEntries({
